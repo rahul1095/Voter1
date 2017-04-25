@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+   <strong>Candicate:</strong>   
+ <%if @vote.candicate_id.present? %>
+            <%=Candidate.find(@vote.candicate_id).name %>
+        <% end %>
+  <!-- strong>Candicate:</strong>
+  <%= @vote.candicate_id %>
+</p> -->
+
+ <p>
+  <strong>User:</strong>
+  <%= User.find(@vote.user_id).email %>
+</p>
+

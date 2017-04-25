@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Votes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Candicate</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @votes.each do |vote| %>
+      <tr>
+      <%if vote.candicate_id.present? %>
+        <td><%= Candidate.find(vote.candicate_id).name  %></td>
+        <%end%>
+         <%if vote.candicate_id.present? %>
+        <td><%= User.find(vote.user_id).email %></td>
+        <td><%= link_to 'Show', vote %></td>
+         <%end%>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%if !Vote.where(:user_id =>current_user.id).present?%>
+
+<%= link_to 'New Vote', new_vote_path %>
+<%end%>
