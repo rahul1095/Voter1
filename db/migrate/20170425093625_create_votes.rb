@@ -3,6 +3,7 @@ class CreateVotes < ActiveRecord::Migration[5.0]
     create_table :votes do |t|
       t.integer :candicate_id
       t.integer :user_id
+  
 
       t.timestamps
     end

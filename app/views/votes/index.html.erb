@@ -3,27 +3,18 @@
 <h1>Votes</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Candicate</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+  
   <tbody>
     <% @votes.each do |vote| %>
-      <tr>
-      <%if vote.candicate_id.present? %>
-        <td><%= Candidate.find(vote.candicate_id).name  %></td>
-        <%end%>
-         <%if vote.candicate_id.present? %>
-        <td><%= User.find(vote.user_id).email %></td>
+      <tr>   
+         
+        <%if current_user.id==vote.user_id%>
         <td><%= link_to 'Show', vote %></td>
+        <%end%>
          <%end%>
         
       </tr>
-    <% end %>
+   
   </tbody>
 </table>
 

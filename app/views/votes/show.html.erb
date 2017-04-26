@@ -8,6 +8,9 @@
   <!-- strong>Candicate:</strong>
   <%= @vote.candicate_id %>
 </p> -->
+ <%if @vote.candicate_id.present? %>
+ <%=Setting.find(@vote.setting_id).start_time%>
+  <% end %>
 
  <p>
   <strong>User:</strong>
