@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :votes,  only: [:create, :new, :show, :index]
     resources :settings
  root 'votes#index'
+ get 'result'=>'votes#result' 
 end
