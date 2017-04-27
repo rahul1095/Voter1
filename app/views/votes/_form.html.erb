@@ -1,6 +1,6 @@
 
-
-<p><% @setting=Setting.last %></p>
+<div class="container">
+  <p><% @setting=Setting.last %></p>
 <%if @setting.start_time < Time.now && @setting.end_timet > Time.now %>
 
 <%if !Vote.where(:user_id =>current_user.id).present?%>
@@ -41,3 +41,4 @@ you already voted
 <% else%>
 voting expired
 <% end %>
+</div>

@@ -2,7 +2,7 @@ class SettingsController < ApplicationController
 	def new
     @Setting = Setting.new(:start_time => Time.now, :end_timet => Time.now+1.minutes)
       @Setting.save
-     redirect_to @Setting
+    redirect_to @Setting
   end
 
 
